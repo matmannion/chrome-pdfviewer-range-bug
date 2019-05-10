@@ -1,5 +1,5 @@
 # Chrome bug reproduction - PDF viewer doesn't send SameSite cookies in Range requests
-MRE for Chrome bug
+MRE for Chrome bug [961617](https://crbug.com/961617)
 
 To run, use `go run app.go` and visit http://localhost:8000/
 
