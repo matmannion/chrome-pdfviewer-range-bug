@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chrome PDF bug reproduction</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Chrome PDF bug reproduction</h1>
+
+  <p>This page will have set two (session) cookies:</p>
+
+  <ul>
+      <li>Auth1=auth1; SameSite=Lax</li>
+      <li>Auth2=auth2</li>
+  </ul>
+
+  <p>There are three (large) files here, which will only be served if the cookies are present. 
+    The bug means that Chrome doesn't send the SameSite=Lax cookie on a Range request in the Chrome PDF viewer, so the PDF
+    only partially renders. The image and video are unaffected.</p>
+
+  <ul>
+    <li><a href="pdf.pdf">pdf</a></li>  
+    <li><a href="photo.jpg">image</a></li>  
+    <li><a href="video.mp4">video</a></li>  
+  </ul>
+</body>
+</html>
